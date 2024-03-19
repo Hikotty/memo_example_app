@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memo Detail</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <body>
+        <h1>Edit Memo: {{ memo.title }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save changes</button>
+        </form>
+        <a href="{% url 'memo_list' %}">Memo List</a>
+    </body>
+</html>
